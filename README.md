@@ -2,9 +2,15 @@
 
 Rohit Kumar Jha
 
-[Zenodo record](https://zenodo.org/records/23241863) · [DOI: 10.5281/zenodo.23241863](https://doi.org/10.5281/zenodo.23241863)
+The existing [Zenodo record](https://zenodo.org/records/23241863) (DOI [10.5281/zenodo.23241863](https://doi.org/10.5281/zenodo.23241863)) currently archives v1. The citation-only v1.1 correction is prepared for upload; its presence on Zenodo has not yet been verified.
 
-[Read the paper](release/logarithm-measure-v1.pdf) · [Version v1](https://github.com/rohitkrjha/logarithm-measure/releases/tag/v1) · [LaTeX source](sources/main.tex) · [Lean project](sources/anc/lean)
+[Read the paper](release/logarithm-measure-v1.1.pdf) · [Version v1.1](https://github.com/rohitkrjha/logarithm-measure/releases/tag/v1.1) · [LaTeX source](sources/main.tex) · [Lean project](sources/anc/lean)
+
+## Revision v1.1
+
+This citation-only revision adds the independently and contemporaneously obtained rational-logarithm theorem of Liu, Jiang, and Zhang (arXiv:2610.10192v1) to the introduction and bibliography and distinguishes the compatible-embedding results. The theorem statements, mathematical proofs, Lean sources, dependency pins, and verifier scripts are unchanged from v1. The original [v1 release](https://github.com/rohitkrjha/logarithm-measure/releases/tag/v1) is preserved.
+
+The rational-logarithm theorem was obtained independently and contemporaneously with Jingwen Liu, Kai Jiang, and Pingwen Zhang, “Irrationality exponents of logarithms of positive rational numbers” ([arXiv:2610.10192v1](https://arxiv.org/abs/2610.10192v1)). We became aware of their preprint after completing our work. The present paper also establishes the compatible-embedding theorem and its additional applications.
 
 ## Result
 
@@ -76,9 +82,9 @@ The GitHub Actions workflow checks publication-file integrity only. It does not 
 
 ## Citation and versions
 
-Use the repository's **Cite this repository** control or [CITATION.cff](CITATION.cff). Version v1 identifies the manuscript and source package in this release. The matching preprint is archived on [Zenodo](https://zenodo.org/records/23241863) with version-specific DOI [10.5281/zenodo.23241863](https://doi.org/10.5281/zenodo.23241863).
+Use the repository's **Cite this repository** control or [CITATION.cff](CITATION.cff). Version v1.1 identifies the manuscript and source package in this release. Until the Zenodo correction is published and checked, cite the versioned GitHub release for these exact files. The existing Zenodo DOI identifies the archived v1 files.
 
-Substantive changes to the manuscript or proof will receive a new release rather than changing the v1 tag. Later citation-only metadata updates may appear on the main branch without changing the v1 mathematical sources.
+Substantive changes to the manuscript or proof will receive a new release rather than changing the v1.1 tag. Later citation-only metadata updates may appear on the main branch without changing the v1.1 mathematical sources.
 
 ## Provenance and licenses
 

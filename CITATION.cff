@@ -5,7 +5,7 @@ title: "Optimal irrationality measures for logarithms of rational numbers and a 
 authors:
   - family-names: Jha
     given-names: Rohit Kumar
-version: v1
+version: v1.1
 repository-code: "https://github.com/rohitkrjha/logarithm-measure"
 url: "https://github.com/rohitkrjha/logarithm-measure"
 license-url: "https://github.com/rohitkrjha/logarithm-measure/blob/main/LICENSE"
@@ -17,7 +17,5 @@ preferred-citation:
     - family-names: Jha
       given-names: Rohit Kumar
   year: 2026
-  version: v1
-  url: "https://zenodo.org/records/23241863"
-  doi: "10.5281/zenodo.23241863"
-  date-published: "2026-10-08"
+  version: v1.1
+  url: "https://github.com/rohitkrjha/logarithm-measure/releases/tag/v1.1"

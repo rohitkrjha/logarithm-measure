@@ -2,14 +2,14 @@ Optimal irrationality measures for logarithms of rational numbers and a compatib
 ====================================================
 
 Author: Rohit Kumar Jha
-Version: v1
+Version: v1.1
 
 FILES
 
-  logarithm-measure-v1.pdf
+  logarithm-measure-v1.1.pdf
       The research manuscript.
 
-  logarithm-measure-v1-sources.zip
+  logarithm-measure-v1.1-sources.zip
       LaTeX manuscript sources and the supporting Lean source project.
       Extract into an empty directory. The manuscript is main.tex; the
       formalization is in anc/lean. See anc/README.txt for source provenance,
@@ -77,3 +77,15 @@ supporting local mathematical sources, build configuration, verification
 scripts, and licenses.
 
 See RIGHTS.txt for the applicable licensing scope.
+
+REVISION HISTORY
+
+This citation-only revision adds the independently and contemporaneously
+obtained rational-logarithm theorem of Liu, Jiang, and Zhang
+(arXiv:2610.10192v1) to the introduction and bibliography and distinguishes
+the compatible-embedding results. The theorem statements, mathematical
+proofs, Lean sources, dependency pins, and verifier scripts are unchanged
+from v1.
+
+The Lean verification counts above refer to the unchanged v1 proof sources.
+No new Lean proof replay is claimed for this bibliographic correction.

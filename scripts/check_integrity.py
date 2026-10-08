@@ -46,7 +46,7 @@ def main():
     for name, expected in manifest["files"].items():
         require(sha256(files[name]) == expected, f"Release changed: {name}")
     check_inventory(files, "SHA256SUMS.txt")
-    archive_path = release / f"{slug}-v1-sources.zip"
+    archive_path = release / f"{slug}-v1.1-sources.zip"
     with zipfile.ZipFile(archive_path) as archive:
         require(archive.testzip() is None, "Source archive CRC failure")
         names = archive.namelist()
