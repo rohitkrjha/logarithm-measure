@@ -2,6 +2,8 @@
 
 Rohit Kumar Jha
 
+[Zenodo record](https://zenodo.org/records/23241863) · [DOI: 10.5281/zenodo.23241863](https://doi.org/10.5281/zenodo.23241863)
+
 [Read the paper](release/logarithm-measure-v1.pdf) · [Version v1](https://github.com/rohitkrjha/logarithm-measure/releases/tag/v1) · [LaTeX source](sources/main.tex) · [Lean project](sources/anc/lean)
 
 ## Result
@@ -74,7 +76,7 @@ The GitHub Actions workflow checks publication-file integrity only. It does not 
 
 ## Citation and versions
 
-Use the repository's **Cite this repository** control or [CITATION.cff](CITATION.cff). Version v1 identifies the manuscript and source package in this release. A Zenodo DOI will be added once the corresponding record has been reserved or published; no DOI is claimed here.
+Use the repository's **Cite this repository** control or [CITATION.cff](CITATION.cff). Version v1 identifies the manuscript and source package in this release. The matching preprint is archived on [Zenodo](https://zenodo.org/records/23241863) with version-specific DOI [10.5281/zenodo.23241863](https://doi.org/10.5281/zenodo.23241863).
 
 Substantive changes to the manuscript or proof will receive a new release rather than changing the v1 tag. Later citation-only metadata updates may appear on the main branch without changing the v1 mathematical sources.
 
