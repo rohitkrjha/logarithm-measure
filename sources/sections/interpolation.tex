@@ -1,0 +1,344 @@
+\section{Interpolation at logarithmic centers}\label{sec:interpolation}
+
+Let \(m,K\ge1\), and fix positive rational \(w_0,v_0,\theta\)
+with \(0<\theta<1\). For further positive rational weights \(w_i\),
+set
+\[
+ W=(w_0,w_1,\ldots,w_m),\qquad
+ V=(v_0,v_1,\ldots,v_m),\qquad v_i=w_i/\theta\quad(i>0).
+\]
+Let \(\PW(H)\) be the space spanned by \(Y^hX^\alpha\) with
+\(w_0h+w\alpha\le H\). Let \(\JV(H)\) be the quotient of
+\(\C[[t,u_1,\ldots,u_m]]\) retaining precisely the coefficients
+\[
+ v_0\ell+\sum_i v_i\beta_i<H.
+\]
+The inequality for rows is strict, whereas the inequality for columns
+is weak.
+
+\begin{theorem}[Separated logarithmic interpolation]\label{thm:interpolation}
+Assume
+\begin{equation}\label{eq:volume}
+ K(w_0/v_0)\theta^m<1.
+\end{equation}
+There are successive lower thresholds for \(w_1,\ldots,w_m\),
+independent of the center coordinates, with this property.
+For nonzero \(y_j\in\C\), \(0\le j<K\), and \(c_{ji}\in\C\),
+the map
+\begin{equation}\label{eq:jetmap}
+ \begin{split}
+ \PW(H)&\longrightarrow\bigoplus_{j<K}\JV(H),\\
+ P&\longmapsto
+ \left(P\bigl(y_j(1+t),
+       (c_{ji}+u_i+\log(1+t))_{i=1}^m\bigr)\right)_{j<K}
+ \end{split}
+\end{equation}
+is surjective for all sufficiently large \(H\) divisible by a fixed
+positive integer, in either of the following cases:
+\begin{enumerate}[label=(\roman*)]
+\item the \(y_j\) are pairwise distinct;
+\item all \(y_j=1\), each family \(c_{0i},\ldots,c_{K-1,i}\)
+is pairwise distinct, and \(K\theta^m<1\).
+\end{enumerate}
+The divisibility requirement depends only on the weights. The lower
+threshold for \(H\) may depend on every fixed datum, including the
+centers.
+\end{theorem}
+
+Case (ii) is the common-fiber interpolation of \cite[Section 2]{OAIpi}.
+We give the argument with both cases present to exhibit the exact
+change required for case (i). In particular, a count of coefficients
+alone is not used to assert surjectivity.
+
+\subsection{The uniform local input and separated weights}
+
+We use the weighted transverse multiplicity comparison of
+\cite[Lemma 2.2]{OAIpi}. In the notation needed here it says the following.
+
+\begin{lemma}[Weighted multiplicity comparison]\label{lem:multiplicity}
+Give \(D\) affine coordinates positive degree weights \(\rho_a\).
+Let commuting analytic vector fields form a frame on an open set,
+with positive derivative costs \(\kappa_b\).
+Suppose polynomials \(f_\ell\) have weighted degree at most \(N\),
+and \(Z\) is a codimension-\(k\) component of their common zero set.
+If every further frame derivative of cost less than
+\(\epsilon N\) of every \(f_\ell\) vanishes on \(Z\), then, for
+any coordinate normal basis \(A\) and frame normal basis \(B\),
+\begin{equation}\label{eq:local-comparison}
+ \prod_{a\in A}\rho_a
+ \le 2k!\epsilon^{-k}\prod_{b\in B}\kappa_b.
+\end{equation}
+The constant is independent of the equations and of the component.
+\end{lemma}
+\begin{proof}
+Work at a general smooth point of \(Z\) where both normal-basis
+conditions hold and no other component passes through the point.
+The commuting flows in the \(B\)-directions give transverse analytic
+coordinates. Vanishing of the derivatives says that the equations
+have no transverse terms of weight below \(\epsilon N\).
+Restrict to the coordinate slice in the \(A\)-directions.
+That slice is transverse, its common zero is isolated, and substitution
+of the remaining analytic coordinates cannot introduce a transverse
+term of smaller weight.
+Thus the local quotient length is at least
+\[
+ \#\{\alpha\in\N^k:\textstyle\sum_{b\in B}\kappa_b\alpha_b
+                  <\epsilon N\}
+ \ge \frac{(\epsilon N)^k}{2k!\prod_{b\in B}\kappa_b}.
+\]
+For the last inequality, unit cubes indexed by the integer parts of
+points of the open weighted simplex cover that simplex; even the
+factor \(2\) is unnecessary for this count.
+
+Generic \(k\) constant linear combinations of the restricted equations
+still cut out an isolated zero. Their quotient length bounds the
+preceding length from above, and weighted B\'ezout bounds it by
+\(N^k/\prod_{a\in A}\rho_a\).
+For clarity, this weighted version follows by choosing an integer \(M_0\)
+with \(M_0\rho_a\in\N_{>0}\) and substituting
+\(x_a=\lambda_a+z_a^{M_0\rho_a}\). Choose \(\lambda_a\) so that
+the preimages of the point are unramified. There are
+\(\prod_{a\in A}M_0\rho_a\) such preimages, each preserving the
+local length, while the total degrees are at most \(M_0N\).
+Ordinary B\'ezout for isolated zeros gives the asserted upper bound;
+see \cite[Corollary VIII.3]{Mondal2021}.
+Comparison of the two lengths proves \eqref{eq:local-comparison}.
+\end{proof}
+
+Choose \(\sigma_0\in\Q_{>0}\) small enough that
+\begin{equation}\label{eq:sigma}
+ \begin{split}
+ (1+3\sigma_0)^{m+1}K(w_0/v_0)\theta^m&<1,\\
+ (1+\sigma_0)\theta&<1,
+ \end{split}
+\end{equation}
+and, in case (ii), also
+\((1+3\sigma_0)^mK\theta^m<1\).
+Put \(L_0=m+2\) and take the deliberately enlarged constant
+\[
+ C_*=
+ 2(m+2)^{m+2}\left(1+\frac{m+2}{\sigma_0}\right)^{m+2}.
+\]
+It dominates \(2k!(L_0/\sigma_0)^k\) for \(1\le k\le m\).
+Choose the positive weights successively so that
+\begin{equation}\label{eq:weight-separation}
+ \prod_{a\in A}w_a>C_*\prod_{b\in B}v_b
+\end{equation}
+whenever \(A,B\subseteq\{0,\ldots,m\}\) have equal size between
+\(1\) and \(m\), and the largest positive index in their symmetric
+difference belongs to \(A\).
+At that index the ratio in \eqref{eq:weight-separation} contains the
+new weight linearly. Larger common indices contribute only
+\(w_i/v_i=\theta\); all remaining factors were already fixed.
+Finitely many inequalities therefore impose a finite lower threshold.
+No point coordinate enters these thresholds.
+
+The formal implementation can use a rectangular transverse-length
+bound, with constant \(k^k(L_0/\sigma_0)^k\), at a sufficiently large
+auxiliary degree. The displayed \(C_*\) also dominates that constant.
+The auxiliary-degree threshold is independent of the varying component,
+so either local formulation gives the same separated-weight argument.
+
+\subsection{The curve inequality}
+
+On the smooth complete model of an irreducible curve \(C\) meeting
+the affine chart, define
+\begin{equation}\label{eq:weighted-degree}
+ \deg_W C=\sum_P
+  \max\left\{0,-\frac{\ord_PY}{w_0},
+          -\frac{\ord_PX_1}{w_1},\ldots,
+          -\frac{\ord_PX_m}{w_m}\right\}.
+\end{equation}
+An identically zero coordinate contributes no pole.
+At a branch through \(a_j=(y_j,c_{j1},\ldots,c_{jm})\), let
+\begin{equation}\label{eq:contact}
+ h_P=\min\left\{
+  \frac{\ord_P(Y/y_j-1)}{v_0},
+  \frac{\ord_P(X_i-c_{ji}-\log(Y/y_j))}{v_i}:1\le i\le m
+ \right\}.
+\end{equation}
+The logarithm is a formal series at the branch, not a global choice
+of a complex logarithm. These contacts are positive and finite on
+a nonconstant branch.
+
+\begin{proposition}\label{prop:curve}
+For the separated weights above, in either case of
+Theorem~\ref{thm:interpolation},
+\begin{equation}\label{eq:curve-bound}
+ \deg_W C\ge(1+\sigma_0)\sum_{P\mapsto a_j}h_P.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Suppose the inequality fails. A count of coefficients and conditions
+gives, for large auxiliary integers \(N\), a nonzero polynomial \(F_N\)
+of \(W\)-degree at most \(N\), with local \(V\)-order at least
+\((1+3\sigma_0)N\) at every center. The leading terms in the two counts
+are
+\[
+ \frac{N^{m+1}}{(m+1)!\prod_aw_a},
+ \qquad
+ \frac{K(1+3\sigma_0)^{m+1}N^{m+1}}
+      {(m+1)!\prod_av_a},
+\]
+and \eqref{eq:sigma} makes the first larger. Independence of the
+conditions is not needed to produce \(F_N\).
+
+On \(Y\ne0\), use the commuting frame
+\[
+ D_0=Y\partial_Y+\sum_{i=1}^m\partial_{X_i},
+ \qquad D_i=\partial_{X_i}\quad(i>0).
+\]
+In the coordinates of \eqref{eq:jetmap}, these are
+\((1+t)\partial_t,\partial_{u_i}\).
+Each preserves the bound on polynomial degree; differentiating with
+cost \(v_a\) lowers local weighted order by at most \(v_a\).
+Thus every derivative of \(F_N\) of total cost at most
+\(\sigma_0N\) has branch order at least
+\((1+2\sigma_0)Nh_P\).
+Its total pole order on the complete curve is at most \(N\deg_W C\).
+The assumed failure of \eqref{eq:curve-bound} makes the former
+total strictly larger. The zero--pole equality forces all these
+derivatives to vanish identically on \(C\).
+
+Set \(\delta_N=\sigma_0N/L_0\). Consider successively the common
+zero sets of derivatives of cost at most \(r\delta_N\),
+\(0\le r\le L_0\), on \(Y\ne0\).
+Choose nested irreducible components containing the affine part of
+\(C\), working backwards from the last level.
+Their dimensions lie between \(1\) and \(m\); hence two adjacent
+components coincide. Call this persistent component \(Z\), of
+codimension \(k\), \(1\le k\le m\).
+Further derivatives of cost less than \(\delta_N\) of its defining
+equations from the earlier level vanish on \(Z\).
+Lemma~\ref{lem:multiplicity} gives
+\[
+ \prod_{a\in A}w_a\le C_*\prod_{b\in B}v_b
+\]
+for every coordinate normal basis \(A\) and frame normal basis \(B\).
+This argument is an instance of the persistent derivative-ideal method;
+see also \cite[Section 5]{Philippon1986}.
+
+If some positive coordinate direction is nontangent to \(Z\),
+choose its largest index \(i\). Some coordinate normal basis contains
+\(i\). Separation forces every frame normal basis to contain \(D_i\).
+The span of the remaining frame vectors is
+\(\ker(dX_i-dY/Y)\). Its failure to span the normal quotient implies
+\[
+ dX_i=dY/Y\quad\text{on }Z.
+\]
+This forces \(Y\) to be constant. Otherwise restrict to an algebraic
+curve on which \(Y\) is nonconstant and pass to its complete model.
+At a zero or pole of \(Y\), the residue of \(dY/Y\) is the
+nonzero integer \(\ord_PY\), whereas the exact differential \(dX_i\)
+has residue zero. This is impossible.
+If every positive coordinate direction is tangent, properness of \(Z\)
+forces its tangent space to be their span, so \(dY=0\) and the same
+conclusion holds. In particular \(Y\) is constant on \(C\).
+
+In case (i), \(C\) meets at most one prescribed center \(a_j\).
+Choose \(X_\ell\) nonconstant on \(C\). The function
+\(X_\ell-c_{j\ell}\) has total pole degree at most
+\(w_\ell\deg_W C\), and has zero order at least \(v_\ell h_P\)
+at every relevant branch. Consequently
+\[
+ \deg_W C\ge\theta^{-1}\sum_{P\mapsto a_j}h_P
+          >(1+\sigma_0)\sum_{P\mapsto a_j}h_P,
+\]
+contradicting the supposition.
+
+In case (ii), the constant is \(Y=1\).
+In that fiber a second coefficient count is available because
+\(K(1+3\sigma_0)^m\theta^m<1\).
+It gives a nonzero polynomial in \(X_1,\ldots,X_m\) of degree
+at most \(N\) and order at least \((1+3\sigma_0)N\) at all centers.
+The same zero--pole argument makes its low-cost ordinary partial
+derivatives vanish on \(C\).
+For \(m=1\), a nonzero polynomial cannot vanish on this curve.
+For \(m\ge2\), repeat the persistent-component argument in the fiber.
+The coordinate and derivative frames now agree.
+Two different normal-basis index sets would violate
+\eqref{eq:weight-separation}, so there is just one.
+Choose an index \(i\) in it. The other coordinate directions fail
+to span the normal quotient, so \(dX_i=0\) on the component.
+That coordinate is constant in characteristic zero.
+Coordinatewise distinctness implies that the component, and hence
+\(C\), meets at most one center. The preceding single-center
+zero--pole argument again contradicts the supposed excess.
+\end{proof}
+
+\subsection{From curve degrees to the actual coefficient map}
+
+We finish the proof of Theorem~\ref{thm:interpolation}; this is the
+curve-to-jet passage of \cite[Section 2.3]{OAIpi}, with normalized
+coordinates at arbitrary \(y_j\ne0\).
+Choose an integer \(R\) for which every \(R/w_a\) and \(R/v_a\)
+is a positive integer. Embed the affine space by all monomials of
+\(W\)-degree at most \(R\), including \(1\), and take its projective
+closure \(X\), with \(L=\OO_X(1)\).
+Pure coordinate powers attain the maximum pole at each point of a
+complete curve, so
+\begin{equation}\label{eq:projective-degree}
+ \deg(L|_C)=R\deg_W C.
+\end{equation}
+
+Replace each logarithm by a Taylor polynomial \(G_i(t)\) whose first
+omitted term has \(t\)-weight greater than \(v_i\). The coordinates
+\[
+ t=Y/y_j-1,\qquad u_i'=X_i-c_{ji}-G_i(t)
+\]
+are algebraic regular coordinates at \(a_j\).
+The replacement preserves \eqref{eq:contact} and induces inverse
+filtration-preserving triangular changes on every finite coefficient
+quotient. Define the finite-colength ideal
+\[
+ I_j=(t^{R/v_0},(u_1')^{R/v_1},\ldots,(u_m')^{R/v_m}).
+\]
+Patch these ideals with the unit ideal away from the centers.
+Its branch order is \(Rh_P\).
+
+Let \(p:X'\to X\) be the ordinary blow-up of this ideal \(I\), and
+write \(I\OO_{X'}=\OO_{X'}(-E)\), \(A=p^*L\).
+The curve inequality and \eqref{eq:projective-degree} show that
+\(A-(1+\sigma_0)E\) is nef.
+For a curve contracted by \(p\), this follows instead from relative
+ampleness of \(-E\); curves avoiding the affine chart do not meet \(E\).
+For large \(a>1\), \(aA-E\) is ample.
+The identity
+\[
+ A-E=
+ \frac{a-1}{a(1+\sigma_0)-1}\bigl(A-(1+\sigma_0)E\bigr)
+ +\frac{\sigma_0}{a(1+\sigma_0)-1}(aA-E)
+\]
+therefore makes \(A-E\) ample; see
+\cite[Corollary 1.4.10]{Lazarsfeld2004}.
+These statements do not require a smooth or normal blow-up.
+
+The large-degree graded-piece and vanishing theorems for the Rees
+algebra give
+\[
+ p_*\OO_{X'}(-nE)=I^n,\qquad
+ R^q p_*\OO_{X'}(-nE)=0\quad(q>0,\ n\text{ sufficiently large}).
+\]
+These are ordinary powers, not integral closures.
+The relevant general facts are \cite[Tags 0AG6 and 0AG7]{Stacks}.
+Projection, Leray, and Serre vanishing now give
+\[
+ H^1(X,I^n\otimes L^n)=
+ H^1(X',\OO_{X'}(n(A-E)))=0
+\]
+for large \(n\).
+Hence global sections of \(L^n\) realize every local class modulo
+\(I^n\). Each generator of \(I\) has weight \(R\), so
+\[
+ I^n\subseteq\{\text{series of weight at least }nR\}.
+\]
+Surjectivity onto the former quotient therefore implies surjectivity
+onto the desired smaller coefficient quotient.
+Completion does not change the finite-length local quotients.
+Finally, for sufficiently large \(n\), global sections of \(L^n\)
+are restrictions of homogeneous polynomials of degree \(n\) in the
+embedding coordinates, by Serre vanishing for the projective ideal
+sheaf. They have \(W\)-degree at most \(nR\) on the affine chart.
+Taking \(H=nR\) and undoing the triangular logarithmic substitution
+proves \eqref{eq:jetmap}.
+\hfill\(\square\)

@@ -1,0 +1,76 @@
+\section{Approximation conventions and preliminary reductions}
+\label{sec:preliminaries}
+
+\begin{definition}
+For \(x,b\in\R\), write \(\ELB(x,b)\) if, for every real \(\nu>b\),
+there is \(Q\in\N\), \(Q\ge2\), such that
+\[
+ \forall p\in\Z\ \forall q\in\N,\qquad
+ q\ge Q\ \Longrightarrow\ q^{-\nu}\le\abs{x-p/q}.
+\]
+\end{definition}
+
+\begin{lemma}\label{lem:endpoint}
+If \(\ELB(x,b)\), then \(x\) is irrational. Moreover, for
+\(b\ge2\),
+\[
+ 2\le\mu(x)\le b.
+\]
+\end{lemma}
+\begin{proof}
+If \(x=a/c\), with \(a\in\Z\), \(c\in\N_{>0}\), use
+\(p=ka\), \(q=kc\) with \(k\) arbitrarily large. This contradicts
+the positive lower bound in the definition.
+For any \(\nu>b\), that definition excludes good reduced approximants
+with \(q\ge Q\). There are only finitely many smaller denominators
+and finitely many relevant numerators for each of them. Thus no
+approximation exponent greater than \(b\) belongs to the defining set
+of \(\mu(x)\). Dirichlet supplies the opposite inequality.
+\end{proof}
+
+It is enough to contradict the following assertion for each fixed
+\(\nu>2\kappa\):
+\begin{equation}\label{eq:bad-approximations}
+ \text{for every }Q,\quad
+ \exists p\in\Z,\ q\in\N,\quad
+ q\ge Q,\qquad\abs{x-p/q}\le q^{-\nu}.
+\end{equation}
+Failure of \(\ELB(x,2\kappa)\) implies this assertion for some such
+\(\nu\). Since \(x\ne0\), sufficiently large approximants in
+\eqref{eq:bad-approximations} have \(p\ne0\).
+They also satisfy \(\abs{p/q}\le |x|+1\).
+The integers
+\[
+ w_i=\lceil\log q_i\rceil
+\]
+can be made successively as large as desired. In particular, one may
+require each \(w_i\) to exceed a threshold depending on the previously
+chosen weights. This does not require a prescribed growth rate of the
+whole sequence of good approximants.
+
+\begin{lemma}[Root-of-unity reduction]\label{lem:torsion}
+In proving Theorem~\ref{thm:compatible}, one may assume either that
+the powers \(\xi^j\), \(j\ge0\), are distinct or that \(\xi=1\).
+The reduction preserves \(x,F,S,d,s\).
+\end{lemma}
+\begin{proof}
+If \(\xi\) is not a root of unity, equality of two distinct powers
+would give a positive power equal to \(1\), since \(\xi\ne0\).
+If \(\xi^n=1\) for some \(n\ge1\), replace \((\gamma,\xi)\)
+by \((n\gamma,1)\). Equation~\eqref{eq:compatibility} remains true
+after raising both sides to the \(n\)-th power.
+The new slope is nonzero.
+\end{proof}
+
+From now through Section~\ref{sec:parameters}, this normalization has
+been performed. Its effect is only on fixed constants.
+All choices other than the final degree parameter \(H\) are fixed
+before any limit \(H\to\infty\) is taken.
+For multi-indices \(\alpha\in\N^m\), put
+\[
+ |\alpha|=\sum_{i=1}^m\alpha_i,\qquad
+ w\alpha=\sum_{i=1}^m w_i\alpha_i,\qquad
+ \binom{\alpha}{\beta}=\prod_{i=1}^m\binom{\alpha_i}{\beta_i}.
+\]
+Coordinatewise inequalities between multi-indices have their usual
+meaning. Empty products and empty least common multiples equal \(1\).

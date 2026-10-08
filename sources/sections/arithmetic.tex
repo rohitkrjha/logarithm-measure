@@ -1,0 +1,190 @@
+\section{The algebraic determinant and its arithmetic bound}
+\label{sec:arithmetic}
+
+Fix \(\nu>2\kappa\) and assume \eqref{eq:bad-approximations}.
+For now take finite parameters \(m,K,w_0,v_0,\theta\) satisfying the
+interpolation hypotheses, and choose good approximants
+\(p_i/q_i\), \(q_i\ge2\), \(p_i\ne0\), with separated
+\(w_i=\lceil\log q_i\rceil\). Their precise order of choice is
+given in Section~\ref{sec:parameters}.
+Let \(F_0>2/\theta\), and set
+\begin{equation}\label{eq:truncations}
+ T_i=\left\lceil\frac{F_0w_i}{v_0}\right\rceil,\qquad
+ G_i(t)=\sum_{1\le k<T_i}\frac{(-1)^{k+1}}{k}t^k,\qquad
+ L_i=\lcm(1,\ldots,T_i).
+\end{equation}
+Using \(T_i\), rather than \(T_i-1\), in the least common multiple
+is harmless and agrees with the formal arithmetic bound.
+The omitted tail has weight at least \(v_0T_i\ge F_0w_i>w_i/\theta\).
+
+\subsection{Matrix, rank, and one minor over the number field}
+
+Index columns by \((h,\alpha)\in\N\times\N^m\) satisfying
+\(w_0h+w\alpha\le H\), and rows by
+\((j,\ell,\beta)\) satisfying
+\[
+ 0\le j<K,\qquad v_0\ell+w\beta/\theta<H.
+\]
+Define the matrix over \(F\) by
+\begin{equation}\label{eq:matrix}
+ M_H[(j,\ell,\beta),(h,\alpha)]
+ =[t^\ell u^\beta]\,
+   \bigl(\xi^j(1+t)\bigr)^h
+   \prod_{i=1}^m
+    \bigl(j\gamma p_i/q_i+G_i(t)+u_i\bigr)^{\alpha_i}.
+\end{equation}
+Explicitly, for \(\beta\le\alpha\), its entry is
+\begin{equation}\label{eq:binomial-entry}
+ \xi^{jh}\binom{\alpha}{\beta}
+ [t^\ell](1+t)^h
+   \prod_i\bigl(j\gamma p_i/q_i+G_i(t)\bigr)^{\alpha_i-\beta_i};
+\end{equation}
+it is zero otherwise.
+
+Fix one embedding in \(S\). If the powers of \(\xi\) are distinct,
+the centers
+\[
+ \bigl(\sigma(\xi)^j,
+       (j\sigma(\gamma)p_i/q_i)_{i=1}^m\bigr)
+\]
+satisfy case (i) of Theorem~\ref{thm:interpolation}.
+If \(\xi=1\), each additive coordinate is injective in \(j\)
+because \(\gamma p_i/q_i\ne0\), and case (ii) applies.
+The truncation in \eqref{eq:truncations} preserves the jet quotient.
+It follows that, for sufficiently large divisible \(H\), the
+complex image of \eqref{eq:matrix} has full row rank.
+Select a square minor using every row, and denote its determinant
+by \(\Delta_H\in F^\times\) and its size by \(M=M(H)\).
+The chosen columns may depend on \(H\).
+Every embedding sends this same determinant to the determinant of
+the corresponding complex minor; none of these images is zero.
+We never choose different minors at different embeddings.
+
+The fixed-weight simplex counts give
+\begin{equation}\label{eq:row-count}
+ M(H)\sim
+ \frac{K\theta^m H^{m+1}}{(m+1)!v_0\prod_iw_i}.
+\end{equation}
+Define
+\begin{equation}\label{eq:mean}
+ \bar b_H=\frac1{MH}\sum_{(j,\ell,\beta)\ {\rm row}}w\beta,
+ \qquad 0\le\bar b_H\le\theta.
+\end{equation}
+The simplex asymptotic follows, for example, by comparing unit cubes
+with the bounded shifts of the corresponding real simplex. Changing
+a weak boundary inequality to a strict one does not change its leading
+volume.
+
+\subsection{Clearing the base, slope, and logarithmic denominators}
+
+Choose positive integers \(D_\xi,D_\gamma\) such that
+\(D_\xi\xi,D_\gamma\gamma\in\OO_F\), and put
+\begin{equation}\label{eq:common-denominator}
+ \mathcal D_H=
+ D_\xi^{\,K\lfloor H/w_0\rfloor}
+ \prod_{i=1}^m(D_\gamma L_i)^{\lfloor H/w_i\rfloor}.
+\end{equation}
+Scale each column by \(\prod_iq_i^{\alpha_i}\), each row by
+\(\prod_iq_i^{-\beta_i}\), and every entry by \(\mathcal D_H\).
+
+\begin{lemma}\label{lem:integral}
+Every scaled entry belongs to \(\OO_F\). Hence the scaled determinant
+is a nonzero algebraic integer
+\[
+ Z_H=S_H\Delta_H,\qquad
+ S_H=\mathcal D_H^M
+   \prod_{\text{selected columns}}\prod_iq_i^{\alpha_i}
+   \prod_{\text{rows}}\prod_iq_i^{-\beta_i}>0.
+\]
+Here \(S_H\in\Q\), and it need not be an integer.
+\end{lemma}
+\begin{proof}
+Entries with \(\beta\not\le\alpha\) vanish.
+For the others, the row and column factors turn
+\eqref{eq:binomial-entry} into
+\[
+ \xi^{jh}\binom{\alpha}{\beta}
+ [t^\ell](1+t)^h
+   \prod_i(j\gamma p_i+q_iG_i(t))^{\alpha_i-\beta_i}.
+\]
+The polynomial
+\(D_\gamma L_i(j\gamma p_i+q_iG_i(t))\)
+has integral coefficients. Its required power is at most
+\(\alpha_i\le\lfloor H/w_i\rfloor\).
+Also \(jh\le K\lfloor H/w_0\rfloor\), so
+\[
+ D_\xi^{K\lfloor H/w_0\rfloor}\xi^{jh}
+ =(D_\xi\xi)^{jh}D_\xi^{K\lfloor H/w_0\rfloor-jh}
+\]
+is integral. This proves entrywise integrality.
+The determinant of an integral matrix is integral, and the scalings
+are nonzero.
+\end{proof}
+
+Let \(\Lambda=\log4+4\). We use the elementary bound
+\(\log\lcm(1,\ldots,n)\le\Lambda n\).
+Indeed, the elementary Chebyshev bound
+\(\vartheta(u)\le u\log4\), obtained from binomial coefficients,
+and the prime-power identity for \(\psi\) give, for \(n\ge1\),
+\[
+ \log\lcm(1,\ldots,n)=\psi(n)
+ \le n\log4+2\sqrt n\log n
+ \le(\log4+4)n.
+\]
+The last step uses \(\log n\le2\sqrt n\); \(n=0\) is immediate.
+This deliberately loose constant is exactly
+\path{OAI.PiExponent.Arithmetic.lcmConstant} in the pinned source.
+The sharper constant in the informal argument of
+\cite[Section 3.1]{OAIpi} is not needed.
+Since \(T_i\le F_0w_i/v_0+1\),
+\begin{equation}\label{eq:log-D}
+ \frac{\log\mathcal D_H}{H}
+ \le \frac{\Lambda F_0m}{v_0}
+    +(\Lambda+\log D_\gamma)\sum_i\frac1{w_i}
+    +\frac{K\log D_\xi}{w_0}.
+\end{equation}
+Write \(w_*=\min_iw_i\). For every selected column,
+\(\sum_i\alpha_i\log q_i\le H\).
+For a row, \(\log q_i\ge w_i-1\) and
+\(|\beta|\le\theta H/w_*\), so
+\[
+ \sum_i\beta_i\log q_i\ge w\beta-\theta H/w_*.
+\]
+Consequently
+\begin{equation}\label{eq:scaling-bound}
+ \frac{\log S_H}{MH}\le1-\bar b_H+E_{\rm ar}^{\,0},
+ \qquad
+ E_{\rm ar}^{\,0}=
+ \frac{\Lambda F_0m}{v_0}
+ +(\Lambda+\log D_\gamma)\sum_i\frac1{w_i}
+ +\frac{K\log D_\xi}{w_0}+\frac{\theta}{w_*}.
+\end{equation}
+
+\begin{proposition}[Norm lower bound]\label{prop:arithmetic}
+Set
+\[
+ \mathcal N_H=\frac1{sMH}
+        \sum_{\sigma:F\hookrightarrow\C}\log|\sigma(\Delta_H)|,
+ \qquad E_{\rm ar}=\kappa E_{\rm ar}^{\,0}.
+\]
+Then
+\begin{equation}\label{eq:arithmetic}
+ \mathcal N_H\ge-\kappa(1-\bar b_H)-E_{\rm ar}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The norm of the nonzero algebraic integer \(Z_H\) is a nonzero
+rational integer. Therefore
+\[
+ 1\le|N_{F/\Q}(Z_H)|
+   =S_H^d\prod_{\sigma:F\hookrightarrow\C}|\sigma(\Delta_H)|.
+\]
+Take logarithms, divide by \(sMH\), and apply
+\eqref{eq:scaling-bound}.
+\end{proof}
+
+For \(x=\log3\), take \(F=\Q\), \(\gamma=1\), \(\xi=3\),
+and \(D_\xi=D_\gamma=1\): the factor \(3^{jh}\) is integral
+and costs no denominator. For a positive rational \(r=a/b\),
+one can take \(D_\xi=b\); the extra cost is at most
+\(K\log b/w_0\), which the parameter choice will make small.

@@ -1,0 +1,221 @@
+\section{Formal verification and reproducibility}\label{sec:verification}
+
+\subsection{What the formal endpoints assert}
+
+The Lean definition \path{LogarithmExtension.EventualLowerBound}
+is exactly the predicate \(\ELB\) in
+Section~\ref{sec:preliminaries}; it quantifies over every integer
+numerator and every sufficiently large natural denominator.
+The main declarations include
+\begin{Verbatim}[fontsize=\small]
+logThree_eventual_lower_bound
+logThree_irrationalityExponent_eq_two
+rationalLog_eventual_lower_bound
+rationalLog_irrationalityExponent_eq_two
+algebraicLog_irrationalityExponent_bounds
+CompatibleLog.compatible_embedding_eventual_lower_bound
+CompatibleLog.compatible_embedding_irrationalityExponent_bounds
+CompatibleLog.all_embeddings_irrationalityExponent_eq_two
+\end{Verbatim}
+All are in the namespace \texttt{LogarithmExtension}.
+The unbundled compatible-embedding theorem takes only the number field,
+\(\gamma,\xi,x\), their stated nonzero conditions, a nonempty finite
+set of embeddings, and the exponential identities
+\eqref{eq:compatibility}. It has no interpolation, nonvanishing,
+analytic-bound, or irrationality premise.
+The bundled data structure \path{CompatibleLog.Base} contains these
+same mathematical data, not a hidden proof of the conclusion.
+
+The names \path{LogThreeTarget}, \path{RationalLogarithmTarget},
+and \path{AlgebraicLogarithmTarget} are proposition definitions.
+They are not axioms: the corresponding \texttt{target} declarations
+prove them.
+
+The exponent definition reused from \texttt{OAI.PiExponent} is a
+real supremum of the positive exponents admitting infinitely many
+good reduced rational approximants. For every finite-bound endpoint,
+the code first proves that this set is bounded above, and that it
+contains \(2\). The resulting supremum therefore agrees with the
+usual extended-real definition in this paper.
+The Liouville counterexample is expressed as absence of any finite
+eventual bound, rather than as a possibly misleading real supremum.
+
+\subsection{Correspondence of arguments and source files}
+
+All extension paths below are relative to
+\texttt{LogarithmExtension/}. The earlier dedicated
+\texttt{LogThree}, \texttt{RationalLog}, and \texttt{AlgebraicLog}
+pipelines remain checked; the \texttt{CompatibleLog} pipeline supplies
+the unified theorem proved here.
+
+{\small
+\let\path\leanfile
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.37\textwidth}
+                     >{\raggedright\arraybackslash}p{.59\textwidth}@{}}
+\toprule
+Mathematical component & Principal extension modules\\
+\midrule
+\endfirsthead
+\toprule
+Mathematical component & Principal extension modules\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Actual target and finite exponent semantics
+& \path{Target.lean}, \path{Endpoint.lean},
+\path{GeneralExponent.lean}\\[4pt]
+Normalized logarithmic coordinates and rigidity
+& \path{NormalizedLogJet.lean}, \path{CoordinateScaling.lean},
+\path{CurveRigidity.lean}\\[4pt]
+Proposition~\ref{prop:curve}, distinct-center case
+& \path{CurveContactFamily.lean},
+\path{CurveDerivativeVanishing.lean}, \path{CurveInequality.lean},
+\path{CurveGeometry.lean}\\[4pt]
+Common-fiber branch
+& \path{CommonFiberCurve.lean}, \path{GeometryData.lean}\\[4pt]
+Projective degree, local ideals, and exceptional degree
+& \path{CurveModelDegrees.lean}, \path{NormalizedJetIdeal.lean},
+\path{CompactNormalizedJetIdeal.lean}, \path{LocalContactLength.lean},
+\path{ExceptionalDegree.lean}\\[4pt]
+Ampleness and global jet generation
+& \path{BlowupGeometry.lean}, \path{BlowupMargin.lean},
+\path{BlowupAmple.lean}, \path{JetAmpleness.lean},
+\path{GlobalJetPackets.lean}, \path{JetSurjectivity.lean}\\[4pt]
+Identification with the actual matrix
+& \path{BoundedJetMatrix.lean}, \path{MatrixIdentification.lean},
+\path{CompatibleLogGeometry.lean}\\[4pt]
+Equation~\eqref{eq:row-expansion} and analytic centers
+& \path{AnalyticTranslation.lean},
+\path{CompatibleLogAnalyticCenters.lean}\\[4pt]
+Arithmetic over \(F\), integral norm, and averaging
+& \path{NumberFieldMatrix.lean}, \path{NumberFieldNorm.lean},
+\path{NumberFieldDeterminant.lean},
+\path{NumberFieldNormAveraging.lean},
+\path{CompatibleLogMatrixArithmetic.lean}\\[4pt]
+Actual summands and their finite sum
+& \path{CompatibleLogLiteralAnalyticSummand.lean},
+\path{CompatibleLogAnalyticAggregate.lean}\\[4pt]
+Incompatible embeddings and full norm bound
+& \path{ConjugateAnalyticBound.lean},
+\path{CompatibleLogAllEmbeddings.lean}\\[4pt]
+Choices and determinant contradiction
+& \path{CompatibleLogSuccessiveApproximations.lean},
+\path{CompatibleLogAdmissibleParameters.lean},
+\path{CompatibleLogDeterminantContradiction.lean}\\[4pt]
+Root-of-unity reduction and final theorem
+& \path{CompatibleLogBase.lean}, \path{CompatibleLogNonTorsion.lean},
+\path{CompatibleLogMain.lean}\\[4pt]
+Theorem~\ref{thm:rational}, including the literal \(\log3\)
+& \path{LogThreeMain.lean}, \path{RationalLogMain.lean}\\[4pt]
+Corollaries~\ref{cor:algebraic}--\ref{cor:quadratic}
+& \path{AlgebraicLogMain.lean}, \path{RationalAffine.lean},
+\path{RationalPowerLog.lean}, \path{RationalArctangent.lean},
+\path{QuadraticNormalizedLog.lean}\\[4pt]
+Proposition~\ref{prop:counterexamples}
+& \path{LogarithmCounterexamples.lean}\\
+\end{longtable}
+}
+
+General results reused from the pinned upstream development include
+the persistent-component and weighted multiplicity machinery,
+projective and local algebra, numerical ampleness and vanishing,
+simplex counts, logarithmic row algebra, collision estimates, and
+the approximation endpoint lemmas. Theorem \(\mu(\pi)=2\) itself
+is not the hypothesis from which the logarithm result is deduced.
+The new target-independent geometry data remove the
+\(\pi\)-specific approximation hypotheses from the geometric interface.
+
+\subsection{Axiom audit and kernel replay}
+
+The build and transitive axiom audit use the following commands:
+\begin{Verbatim}[fontsize=\small]
+lake build -q LogarithmExtension.Verification
+lake env lean --trust=0 -Ddebug.skipKernelTC=false \
+  LogarithmExtension/Verification.lean
+\end{Verbatim}
+The audit checked \(1326\) extension theorem declarations.
+Every transitive axiom was one of
+\[
+ \texttt{propext},\qquad\texttt{Classical.choice},\qquad
+ \texttt{Quot.sound}.
+\]
+It also audited the reference \(\pi\) endpoint separately.
+A source scan found no proof admissions, new axiom declarations,
+unsafe or partial declarations, or \texttt{native\_decide} in the
+extension. A defined target proposition is not counted as a proof.
+
+The full combined replay was also rerun successfully:
+\begin{Verbatim}[fontsize=\small]
+lake env lean --run VerifyGeneralLog.lean
+\end{Verbatim}
+Its observed results were
+\begin{Verbatim}[fontsize=\small]
+Replaying 118179 endpoint dependencies in an empty kernel environment.
+PASS: all 33 general-logarithm and counterexample endpoints.
+PASS: their complete dependency closure rechecked
+      in an empty kernel environment.
+PASS: only propext, Classical.choice, and Quot.sound allowed as axioms.
+\end{Verbatim}
+The selected roots cover \(\log3\), rational and rational-power
+logarithms, algebraic logarithms, both branches of the compatible
+theorem, the arctangent and quadratic examples, and the real-input
+counterexamples.
+The checker collects dependencies of both types and values, follows
+mutual declaration blocks, rejects unsafe or partial declarations
+and nonstandard axioms, calls \texttt{Lean.Replay} in an environment
+created by \texttt{mkEmptyEnvironment}, and checks that the selected
+roots occur in the replayed environment.
+This replay uses Lean's kernel in a fresh environment, not a second,
+independently implemented proof checker.
+
+\subsection{Pinned sources and reproduction}
+
+The source package fixes the following revisions:
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Component & Version or commit\\
+\midrule
+Lean & \texttt{4.34.1}\\
+Lean commit & \texttt{5045d0056413266e57c625dcd7c365b10e377c52}\\
+Mathlib & \texttt{d13f23b723b8a846827a245b89c10fc7d3f11612}\\
+OpenAI mathematics & \texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The upstream tracked source was not modified.
+The ancillary package contains the extension, selected upstream
+source trees, \texttt{lean-toolchain}, \texttt{lakefile.toml},
+the pinned \texttt{lake-manifest.json}, and the replay programs.
+A SHA-256 inventory identifies the packaged files.
+Only local source modules required by the logarithm formalization and
+its verification targets are included.
+
+After installing the specified Lean toolchain, enter the ancillary
+Lean project directory and run
+\begin{Verbatim}[fontsize=\small]
+lake exe cache get
+lake build LogarithmExtension.Verification
+lake env lean --run VerifyGeneralLog.lean
+\end{Verbatim}
+Finish the build before starting the replay, and do not rebuild
+imported modules while it is running.
+The cache command obtains the Mathlib build cache; compiling its
+sources is an alternative.
+External toolchain and package downloads, adequate memory, and disk
+space are required. The distributed archive contains sources rather
+than a preinstalled Lean environment.
+
+\subsection*{Acknowledgments}
+
+The determinant method and much of its formal infrastructure are due
+to the OpenAI preprint \cite{OAIpi}. Their reuse and adaptation are
+credited throughout, and the upstream license notices are retained
+in the source package.
+The Lean and Mathlib communities supplied the proof assistant and
+general mathematical libraries.
+This work was developed with substantial assistance from OpenAI's
+Codex, including exploration, implementation of the formal proofs,
+and manuscript preparation.

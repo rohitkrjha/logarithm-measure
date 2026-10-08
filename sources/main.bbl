@@ -1,0 +1,81 @@
+\begin{thebibliography}{10}
+
+\bibitem{BLS2018}
+I.~V. Bondareva, M.~Yu. Luchin, and V.~Kh. Salikhov.
+\newblock Symmetrized polynomials in a problem of estimating of the
+  irrationality measure of number {$\ln 3$}.
+\newblock {\em Chebyshevskii Sbornik}, 19(1):15--25, 2018.
+\newblock In Russian; \url{https://www.mathnet.ru/eng/cheb619}.
+
+\bibitem{BHLW2024}
+Abderraouf Bouchelaghem, Yuxin He, Yuanhang Li, and Qiang Wu.
+\newblock On the linear independence measures of logarithms of rational
+  numbers. {II}.
+\newblock {\em Journal of the Korean Mathematical Society}, 61(2):293--307,
+  2024.
+\newblock \url{https://doi.org/10.4134/JKMS.j230133}.
+
+\bibitem{Lazarsfeld2004}
+Robert Lazarsfeld.
+\newblock {\em Positivity in Algebraic Geometry {I}: Classical Setting: Line
+  Bundles and Linear Series}, volume~48 of {\em Ergebnisse der Mathematik und
+  ihrer Grenzgebiete, 3. Folge}.
+\newblock Springer-Verlag, Berlin, 2004.
+
+\bibitem{Marcovecchio2014}
+Raffaele Marcovecchio.
+\newblock Multiple {Legendre} polynomials in {Diophantine} approximation.
+\newblock {\em International Journal of Number Theory}, 10(7):1829--1855, 2014.
+\newblock \url{https://arxiv.org/abs/2512.12890}.
+
+\bibitem{MV2012}
+Raffaele Marcovecchio and Carlo Viola.
+\newblock Irrationality and nonquadraticity measures for logarithms of
+  algebraic numbers.
+\newblock {\em Journal of the Australian Mathematical Society}, 92(2):237--267,
+  2012.
+\newblock \url{https://doi.org/10.1017/S1446788712000274}.
+
+\bibitem{Mondal2021}
+Pinaki Mondal.
+\newblock How many zeroes? counting the number of solutions of systems of
+  polynomials via geometry at infinity ({Draft III}).
+\newblock arXiv:1806.05346v5, \url{https://arxiv.org/abs/1806.05346v5}, 2021.
+
+\bibitem{OAIpi}
+{OpenAI}.
+\newblock The irrationality exponent of {$\pi$} is 2.
+\newblock
+  \url{https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf},
+  2026.
+\newblock Preprint dated September 24, 2026. Source revision
+  adc7f1241b42e322a6451854ab7e4b4c146bf78a.
+
+\bibitem{Philippon1986}
+Patrice Philippon.
+\newblock Lemmes de z{\'e}ros dans les groupes alg{\'e}briques commutatifs.
+\newblock {\em Bulletin de la Soci{\'e}t{\'e} Math{\'e}matique de France},
+  114:355--383, 1986.
+\newblock Errata et addenda, 115 (1987), 397--398.
+  \url{https://www.numdam.org/articles/10.24033/bsmf.2060/}.
+
+\bibitem{Stacks}
+{The Stacks Project Authors}.
+\newblock The {Stacks Project}.
+\newblock \url{https://stacks.math.columbia.edu}, 2026.
+\newblock In particular, Tags 0AG6 and 0AG7 (coherent sheaves on Proj), 0B5U
+  (ample invertible sheaves), and 0BXX (curves and function fields).
+
+\bibitem{WuWang2014}
+Qiang Wu and Lihong Wang.
+\newblock On the irrationality measure of {$\log 3$}.
+\newblock {\em Journal of Number Theory}, 142:264--273, 2014.
+\newblock \url{https://doi.org/10.1016/j.jnt.2014.03.007}.
+
+\bibitem{Zudilin2004}
+Wadim Zudilin.
+\newblock An essay on irrationality measures of {$\pi$} and other logarithms.
+\newblock arXiv:math/0404523v2, \url{https://arxiv.org/abs/math/0404523v2},
+  2004.
+
+\end{thebibliography}

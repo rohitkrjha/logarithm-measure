@@ -1,0 +1,169 @@
+\section{Parameter choices and the final contradiction}
+\label{sec:parameters}
+
+\begin{lemma}[The comparison gap]\label{lem:gap}
+Let \(\kappa\ge1\) and \(\nu>2\kappa\). There are positive
+rational numbers \(\theta,A,B,C\) and a real \(\eta\in(0,1)\)
+such that
+\begin{gather}
+ 0<\theta<A<B<1,\qquad C>1,\qquad
+ C\theta<1,\quad CB<1,\quad C\theta/B>1,\quad B/A>1,
+ \label{eq:parameter-ratios}\\
+ g:=\nu\bigl(A(1-\eta)-\theta\bigr)-\kappa(1-\theta)>0.
+ \label{eq:gap}
+\end{gather}
+\end{lemma}
+\begin{proof}
+Choose a rational \(b_0\) with
+\[
+ \frac12<b_0<1-\frac{\kappa}{\nu}.
+\]
+For a sufficiently small positive rational \(\delta\), put
+\(\theta=1-\delta\), \(A=1-b_0\delta\). Then \(0<\theta<A<1\),
+\[
+ \nu(A-\theta)-\kappa(1-\theta)
+     =\bigl(\nu(1-b_0)-\kappa\bigr)\delta>0,
+\]
+and
+\(\theta-A^2=(2b_0-1)\delta-b_0^2\delta^2>0\).
+Choose rationals
+\[
+ A/\theta<C<1/A,\qquad A<B<\min(1/C,C\theta).
+\]
+The intervals are nonempty because \(A^2<\theta\).
+Also \(C\theta<\theta/A<1\), giving all the ratio inequalities.
+Finally choose \(\eta>0\) small enough to preserve the positive gap.
+\end{proof}
+
+The constants in the preceding estimates can all be made small in the
+required order. To see this without suppressing any number-field cost,
+put \(E=E_{\rm ar}+E_{\rm an}\) and define
+\[
+ \begin{split}
+ \mathcal C&=R_0+\kappa\log D_\xi+
+                    \kappa(\log\Xi+\log(3/2)),\\
+ \mathcal W&=\kappa\theta+\log4+\log(2K\Gamma)+\nu
+       +\log(2R_0K)+\kappa\log(2(KB_0+2)).
+ \end{split}
+\]
+All these quantities are nonnegative. The exact error identity is
+\begin{equation}\label{eq:error-ledger}
+ \begin{split}
+ E={}&\frac{\nu}{F_0}
+   +\frac{\kappa\Lambda F_0m+(\kappa+2)\log2}{v_0}
+   +\mathcal C\frac K{w_0}\\
+   &+\kappa(\Lambda+\log D_\gamma)\sum_{i=1}^m\frac1{w_i}
+     +\frac{\mathcal W}{w_*}.
+ \end{split}
+\end{equation}
+In particular, algebraic denominators and unconstrained conjugates
+appear explicitly rather than being hidden in the \(o(1)\) in \(H\).
+
+\begin{proposition}[Admissible finite choices]\label{prop:choices}
+Assuming \eqref{eq:bad-approximations}, all fixed data can be selected
+so that the interpolation theorem applies and
+\begin{equation}\label{eq:margins}
+ E<g,\qquad cL>\kappa+E.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Choose \(\theta,A,B,C,\eta\) by Lemma~\ref{lem:gap}, and set
+\(\epsilon_0=\min(g/2,1/2)>0\).
+First choose \(F_0>2/\theta\) such that
+\(\nu/F_0<\epsilon_0/3\).
+For an integer \(m\ge1\), define
+\begin{equation}\label{eq:dimension-parameters}
+ K=\lfloor C^m\rfloor,\qquad w_0=B^{-m},\qquad
+ v_0=2K\theta^m w_0.
+\end{equation}
+They satisfy
+\[
+ K(w_0/v_0)\theta^m=\tfrac12,\qquad
+ K\theta^m\le(C\theta)^m<1.
+\]
+The second inequality allows the common-fiber branch as well as the
+distinct-center branch.
+Moreover
+\[
+ \frac K{w_0}\le(CB)^m\longrightarrow0,\qquad
+ v_0\sim2(C\theta/B)^m\longrightarrow\infty,\qquad
+ \frac m{v_0}\longrightarrow0.
+\]
+Substitution in \eqref{eq:collision-limit} gives the exact expression
+\begin{equation}\label{eq:L-dimension}
+ L=\frac{\eta^2}{2(m+1)}(B/A)^m\longrightarrow\infty.
+\end{equation}
+Thus one can fix a finite \(m\) large enough that
+\[
+ \frac{\kappa\Lambda F_0m+(\kappa+2)\log2}{v_0}
+       +\mathcal C\frac K{w_0}<\epsilon_0/3,
+ \qquad cL>\kappa+1.
+\]
+This fixes \(m,K,w_0,v_0\), and hence \(\mathcal W\).
+
+Now choose \(\sigma_0\) and the weight thresholds for
+Theorem~\ref{thm:interpolation}, imposing also its common-fiber
+volume inequality. Choose the finitely many approximants
+\(p_i/q_i\) successively from \eqref{eq:bad-approximations}.
+Their weights can satisfy every separation threshold and can all
+exceed a common bound large enough that
+\[
+ \kappa(\Lambda+\log D_\gamma)\sum_i\frac1{w_i}
+               +\frac{\mathcal W}{w_*}<\epsilon_0/3.
+\]
+Increase the denominator thresholds as needed to ensure \(q_i\ge2\)
+and \(p_i\ne0\).
+This step is valid because the interpolation weight thresholds are
+independent of the centers, which themselves involve \(p_i/q_i\).
+
+Equation~\eqref{eq:error-ledger} now gives \(E<\epsilon_0<g\);
+also \(cL>\kappa+1>\kappa+E\).
+Every choice is finite. Only after fixing this entire list do we let
+the sufficiently divisible parameter \(H\) increase.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:compatible}]
+Normalize \((\gamma,\xi)\) by Lemma~\ref{lem:torsion}.
+Fix \(\nu>2\kappa\) and suppose \eqref{eq:bad-approximations}.
+Make the choices of Proposition~\ref{prop:choices}.
+For arbitrarily large divisible \(H\), interpolation supplies a
+nonzero selected determinant. Propositions~\ref{prop:arithmetic} and
+\ref{prop:analytic} then give
+\[
+ -\kappa(1-\bar b_H)-E_{\rm ar}
+ \le E_{\rm an}+o(1)
+       +\max\{-cL_H,-\nu(A(1-\eta)-\bar b_H)\}.
+\]
+Both entries of this maximum are incompatible with the lower bound
+for sufficiently large \(H\).
+For the collision entry, \(0\le\bar b_H\) implies
+\(\kappa(1-\bar b_H)\le\kappa\), whereas
+\(cL_H\to cL>\kappa+E\).
+For the other entry, since \(\nu>\kappa\) and
+\(\bar b_H\le\theta\),
+\[
+ \nu\bigl(A(1-\eta)-\bar b_H\bigr)
+     -\kappa(1-\bar b_H)
+ \ge \nu\bigl(A(1-\eta)-\theta\bigr)-\kappa(1-\theta)
+ =g>E.
+\]
+The strict margins absorb the common remainder \(o(1)\).
+This contradiction excludes \eqref{eq:bad-approximations}.
+It proves \(\ELB(x,2\kappa)\), including the bound for unreduced
+rational representations. Lemma~\ref{lem:endpoint} proves
+irrationality and the exponent bounds.
+The rational-logarithm theorem and algebraic-base corollary follow
+from the specializations already given.
+\end{proof}
+
+\begin{remark}[What the exponent threshold means]
+The condition \(\nu>2\kappa\) is used to choose
+\(1/2<b_0<1-\kappa/\nu\).
+It supplies the two simultaneous requirements \(A^2<\theta\) and a
+positive determinant gap. This is the precise source of \(2d/s\).
+At the boundary \(\nu=2\kappa\), this argument gives neither that
+interval nor a strict gap.
+For rational logarithms, exponent two means the eventual inequalities
+for every \(2+\varepsilon\); it does not assert an eventual lower
+bound with the exact exponent \(2\).
+\end{remark}

@@ -1,0 +1,13 @@
+{
+  "paper": "logarithm-measure",
+  "title": "Optimal irrationality measures for logarithms of rational numbers and a compatible-embedding extension",
+  "version": "v1",
+  "source_members": 999,
+  "files": {
+    "README.txt": "390710f19e90581eb9bbcd1942f08f5d4068ae8771ed93e1266b6b16ebcf909c",
+    "RIGHTS.txt": "7349c8f44b2692366fab602c2b1eb4f71c89da70f9c8d416b66f15831584b637",
+    "SHA256SUMS.txt": "9f9d8dbb1be74ac95a90110e204b3bd3f765668f5da319117a12cc2749fe5a5f",
+    "logarithm-measure-v1-sources.zip": "514f3c298bc999e71f111f01a36a9825d84c0939715ea1b84d9ed82a33d69eb4",
+    "logarithm-measure-v1.pdf": "311697970ca3eca72c456e11adbaf642c06a9d166dc020b0d901ce547eb53590"
+  }
+}

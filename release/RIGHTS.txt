@@ -1,0 +1,24 @@
+LICENSING SCOPE
+===============
+
+Original contributions: copyright 2026 Rohit Kumar Jha.
+
+The manuscript PDF, manuscript LaTeX and bibliography sources, and the
+author's accompanying documentation are licensed under Creative Commons
+Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+The author's original Lean code, verifier scripts, and build configuration
+in anc/lean are licensed under the Apache License, Version 2.0. A copy is
+included at LICENSES/Apache-2.0.txt in the source archive.
+
+Third-party material is not relicensed by these statements. Bundled upstream
+sources and adapted code retain their applicable Apache-2.0 terms and
+original notices, including the upstream NOTICE and license files where
+present under anc/lean. Existing attribution and license notices take precedence
+for identified third-party contributions. Dependencies downloaded by Lake
+retain their own licenses.
+
+These licenses apply to different components. They do not offer an option
+to use either license indiscriminately for every file.

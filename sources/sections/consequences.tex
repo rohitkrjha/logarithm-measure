@@ -1,0 +1,183 @@
+\section{Special cases, comparison with the \texorpdfstring{\(\pi\)}{pi}
+proof, and limitations}\label{sec:consequences}
+
+\subsection{Rational powers and rational affine changes}
+
+\begin{lemma}\label{lem:affine}
+If \(b\ge2\), \(\ELB(x,b)\), and \(a,c\in\Q\) with \(a\ne0\),
+then \(\ELB(ax+c,b)\).
+\end{lemma}
+\begin{proof}
+For a fixed \(\nu>b\), choose \(b<\nu'<\nu\).
+Write \(a=A/B\), \(c=C/D\), with \(B,D>0\).
+For any \(p/q\), the rational number \((p/q-c)/a\) has an integer
+representation with denominator \(|A|Dq\).
+Consequently, for sufficiently large \(q\),
+\[
+ |ax+c-p/q|\ge |a|(|A|Dq)^{-\nu'}.
+\]
+The fixed positive factor
+\(|a|(|A|D)^{-\nu'}\) is eventually at least
+\(q^{-(\nu-\nu')}\), proving the assertion.
+\end{proof}
+
+\begin{corollary}\label{cor:rational-powers}
+Suppose \(\alpha>0\), \(n\in\N_{>0}\), and
+\(\alpha^n=r\in\Q_{>0}\setminus\{1\}\).
+Then
+\[
+ \mu(\log\alpha)=2.
+\]
+In particular,
+\(\mu(\log\sqrt2)=2\).
+\end{corollary}
+\begin{proof}
+The identity \(\log\alpha=(1/n)\log r\), together with
+Theorem~\ref{thm:rational}, Lemma~\ref{lem:affine}, and
+Lemma~\ref{lem:endpoint}, proves the result.
+\end{proof}
+
+This sharp conclusion is stronger than the degree bound in this
+particular family. The proof uses rational scaling, not invariance
+under arbitrary algebraic scaling.
+
+\subsection{Arctangents of rational numbers}
+
+\begin{corollary}\label{cor:arctangent}
+For every \(r\in\Q\setminus\{0\}\),
+\[
+ \mu(\arctan r)=2.
+\]
+\end{corollary}
+\begin{proof}
+Use \(F=\Q(i)\), \(\gamma=2i\),
+\(\xi=(1+ir)/(1-ir)\), and \(x=\arctan r\ne0\).
+The identity
+\[
+ e^{2i\arctan r}=\frac{1+ir}{1-ir}
+\]
+establishes compatibility for the given embedding. Its complex
+conjugate establishes compatibility for the other embedding.
+Thus \(s=d=2\).
+For \(r=1\), \(\xi=i\) is a root of unity; the root-of-unity
+branch of the theorem is genuinely needed here.
+\end{proof}
+
+\subsection{Quadratic-normalized logarithms}
+
+\begin{corollary}\label{cor:quadratic}
+Let \(a,b,D\in\Q\), \(D>0\), and suppose
+\[
+ a^2-b^2D=1,\qquad \alpha=a+b\sqrt D>1.
+\]
+Then
+\[
+ \mu\left(\frac{\log(a+b\sqrt D)}{\sqrt D}\right)=2.
+\]
+In particular,
+\begin{equation}\label{eq:quadratic-example}
+ \mu\left(\frac{\log(3+2\sqrt2)}{\sqrt2}\right)=2.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Take \(F=\Q(\sqrt D)\), \(\gamma=\sqrt D\),
+\(\xi=a+b\sqrt D\), and \(x=\log\alpha/\sqrt D\ne0\).
+Every embedding sends \(\sqrt D\) to either \(\sqrt D\) or
+\(-\sqrt D\). The first choice gives
+\(e^{\sqrt D\,x}=\alpha\).
+The norm identity gives \(a-b\sqrt D=\alpha^{-1}\), so the
+second choice gives
+\[
+ e^{-\sqrt D\,x}=\alpha^{-1}=a-b\sqrt D.
+\]
+Every embedding is compatible, whether the field has degree one or two.
+\end{proof}
+
+The normalization in this corollary is essential to the asserted
+specialization. It does not imply
+\(\mu(\log(3+2\sqrt2))=2\) by removing the factor \(\sqrt2\).
+The general algebraic-base result gives the separate bound
+\(2\le\mu(\log(3+2\sqrt2))\le4\).
+
+\subsection{How the argument differs from the original
+\texorpdfstring{\(\pi\)}{pi} proof}
+
+The relation to \cite{OAIpi} is at the level of proved machinery,
+not a substitution into its final theorem.
+The following comparison fixes the main changes.
+
+{\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.22\textwidth}
+>{\raggedright\arraybackslash}p{.34\textwidth}
+>{\raggedright\arraybackslash}p{.36\textwidth}@{}}
+\toprule
+Feature & Original \(\pi\) construction & Logarithmic extension\\
+\midrule
+\endfirsthead
+\toprule
+Feature & Original \(\pi\) construction & Logarithmic extension\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Exponential identity
+& \(e^{2i\pi}=1\)
+& \(e^{\log r}=r\), or \(e^{\sigma(\gamma)x}=\sigma(\xi)\)\\[5pt]
+Multiplicative centers
+& Common fiber \(Y=1\)
+& Distinct powers \(r^j\) or \(\xi^j\); common fiber after
+root-of-unity reduction\\[5pt]
+Local coordinates
+& \(t=Y-1\)
+& \(t=Y/y_j-1\); the same logarithmic frame\\[5pt]
+Arithmetic
+& Gaussian-integer norm after denominator clearing
+& Rational integers for rational logarithms; an algebraic integer
+and its full field norm in general\\[5pt]
+Analytic saving
+& Repeated \((a,d)\) coefficient rows
+& The same repetition argument at every compatible embedding;
+direct growth bounds at the others\\[5pt]
+Final coefficient
+& \(1\) in the normalized arithmetic comparison
+& \(d/s\), giving threshold \(2d/s\)\\
+\end{longtable}
+}
+
+For \(\pi\), the compatible data may be viewed as
+\(F=\Q(i)\), \(\gamma=2i\), \(\xi=1\), \(x=\pi\):
+both embeddings are compatible. For \(\log r\), the field is
+\(\Q\), the slope is \(1\), and the real centers require the
+distinct-fiber argument. The analytic translation is preserved
+exactly, while the radius constants change.
+The proof of the new interpolation theorem, the identification with
+\eqref{eq:matrix}, the field-denominator estimates, and the estimates
+at all embeddings are indispensable additions.
+
+\subsection{Why no theorem for all positive real bases is possible}
+
+\begin{proposition}\label{prop:counterexamples}
+The map \(\alpha\mapsto\log\alpha\) on positive real numbers is
+surjective onto \(\R\). There is a positive real \(\alpha\ne1\)
+with rational logarithm, and there is such an \(\alpha\) whose
+irrational logarithm has no finite irrationality exponent.
+\end{proposition}
+\begin{proof}
+For every \(y\in\R\), \(\alpha=e^y>0\) satisfies
+\(\log\alpha=y\). Taking \(y=1\) gives the rational example.
+For the second, let
+\[
+ L=\sum_{n=0}^\infty10^{-n!},\qquad \alpha=e^L.
+\]
+The standard Liouville argument applies: truncation through \(N\)
+has denominator \(q_N=10^{N!}\), while its positive tail is at most
+\(2q_N^{-(N+1)}\). These approximations prove that \(L\) is an
+irrational Liouville number and admits no eventual lower bound of
+any finite exponent. Thus \(\log\alpha=L\) has the claimed property.
+\end{proof}
+
+These examples concern arbitrary real inputs. They are not
+counterexamples to the rational- or algebraic-base theorems.
+The formal statements express the second conclusion as failure of
+\(\ELB(\log\alpha,b)\) for every finite real \(b\), avoiding any
+ambiguous convention for a real-valued supremum of an unbounded set.

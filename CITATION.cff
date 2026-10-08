@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using these results."
+type: software
+title: "Optimal irrationality measures for logarithms of rational numbers and a compatible-embedding extension — manuscript and Lean sources"
+authors:
+  - family-names: Jha
+    given-names: Rohit Kumar
+version: v1
+repository-code: "https://github.com/rohitkrjha/logarithm-measure"
+url: "https://github.com/rohitkrjha/logarithm-measure"
+license-url: "https://github.com/rohitkrjha/logarithm-measure/blob/main/LICENSE"
+preferred-citation:
+  type: unpublished
+  status: preprint
+  title: "Optimal irrationality measures for logarithms of rational numbers and a compatible-embedding extension"
+  authors:
+    - family-names: Jha
+      given-names: Rohit Kumar
+  year: 2026
+  version: v1
+  url: "https://github.com/rohitkrjha/logarithm-measure/releases/tag/v1"

@@ -1,0 +1,250 @@
+\section{Analytic bounds at all embeddings}\label{sec:analysis}
+
+Define fixed size constants
+\[
+ \Gamma=\max\left(1,\max_\sigma|\sigma(\gamma)|\right),\quad
+ \Xi=\max\left(1,\max_\sigma|\sigma(\xi)|\right),\quad
+ B_0=\Gamma(|x|+1),\quad R_0=100(1+\Gamma|x|).
+\]
+The maxima range over all embeddings, not just \(S\).
+Thus \(B_0\ge1\), \(R_0\ge100\). Put \(R=R_0K\).
+
+\subsection{An exact row translation}
+
+For a polynomial column \(P\) and \(a\in\N^m\), consider the
+entire function
+\begin{equation}\label{eq:entire}
+ f_{a,P}(z)=[u^a]P(e^z,z+u_1,\ldots,z+u_m).
+\end{equation}
+For \(P=Y^hX^\alpha\), this is
+\(\binom{\alpha}{a}e^{hz}z^{|\alpha|-|a|}\) when \(a\le\alpha\),
+and zero otherwise. In particular these functions do not depend on
+the center index \(j\).
+
+Fix \(\sigma\in S\) and put
+\[
+ \lambda_\sigma=\sigma(\gamma)x,\quad
+ z=j\lambda_\sigma+\log(1+t),\quad
+ \epsilon_i=j\sigma(\gamma)(p_i/q_i-x),\quad
+ \tau_i(t)=G_i(t)-\log(1+t).
+\]
+The two identities
+\[
+ e^z=\sigma(\xi)^j(1+t),\qquad
+ j\sigma(\gamma)p_i/q_i+G_i(t)+u_i
+       =z+u_i+\epsilon_i+\tau_i(t)
+\]
+give the exact row-vector expansion
+\begin{equation}\label{eq:row-expansion}
+ \begin{split}
+ {\rm row}_{j,\ell,\beta}
+ =\sum_{\substack{a\ge\beta\\wa\le H}}\binom a\beta
+   \sum_{0\le e\le a-\beta}\binom{a-\beta}{e}
+       \epsilon^{a-\beta-e}
+   \sum_{k=0}^{\ell}
+    \left([t^k]\prod_i\tau_i(t)^{e_i}\right)
+    \left([t^{\ell-k}]
+       f_{a,P}(j\lambda_\sigma+\log(1+t))\right)_P .
+ \end{split}
+\end{equation}
+The scalar multiplying a translated row is independent of the column
+\(P\). This is what permits determinant multilinearity.
+The identity is an equality of finite coefficient calculations:
+the column space bounds \(a\), and only Taylor coefficients through
+\(\ell\) occur.
+
+\begin{lemma}[Scalar cost]\label{lem:scalar}
+Every scalar in \eqref{eq:row-expansion} has absolute value at most
+\begin{equation}\label{eq:scalar}
+ \exp\{-\nu w(a-\beta)+H E_{\rm tr}\},
+ \qquad
+ E_{\rm tr}=\frac{\nu}{F_0}+\frac{\log2}{v_0}
+       +\frac{\log4+\log(2K\Gamma)+\nu}{w_*}.
+\end{equation}
+Each row has at most
+\[
+ Q_H=(\lfloor H\rfloor+1)^{2m}(\lfloor H/v_0\rfloor+1)
+\]
+choices in this expansion.
+\end{lemma}
+\begin{proof}
+The approximation and ceiling inequalities give
+\[
+ |\epsilon_i|\le K\Gamma q_i^{-\nu}
+              \le K\Gamma e^\nu e^{-\nu w_i}.
+\]
+Each \(\tau_i\) starts at degree \(T_i\).
+A nonzero coefficient in its product requires
+\(\sum_i e_iT_i\le k\le\ell<H/v_0\), whence
+\(we<H/F_0\).
+On \(|t|=1/2\), the logarithmic tails have absolute value at most
+\(\sum_{n\ge1}2^{-n}/n=\log2<1\).
+Cauchy's estimate bounds the coefficient of their product by \(2^k\).
+The binomial coefficients contribute at most \(4^{|a|}\), and
+\(|a|\le H/w_*\).
+In the approximation factor, replacing \(w(a-\beta-e)\) by
+\(w(a-\beta)\) costs at most \(\nu H/F_0\).
+These inequalities imply \eqref{eq:scalar}, with the harmless extra
+factor \(2\) inside \(\log(2K\Gamma)\).
+Finally \(w_i\ge1\), so both \(a\) and \(e\) have coordinates at
+most \(\lfloor H\rfloor\); \(k\le\lfloor H/v_0\rfloor\).
+\end{proof}
+
+\subsection{The repeated-coefficient saving}
+
+Select one translated row from each original row and omit its scalar.
+Call the resulting square matrix \(T\). Let \(n_a\) count the chosen
+rows with transverse index \(a\), so \(\sum_a n_a=M\).
+Put
+\[
+ c=\frac{\log2}{4},\qquad
+ E_{\rm hol}=\frac{R_0K}{w_0}+\frac{\log2}{v_0}
+                   +\frac{\log(2R_0K)}{w_*}.
+\]
+
+\begin{lemma}[Collision estimate]\label{lem:collision}
+Uniformly over selected columns, translated-row choices, and
+\(\sigma\in S\),
+\begin{equation}\label{eq:collision}
+ |\det T|\le
+  \exp\left\{-c\sum_a n_a^2+MH(E_{\rm hol}+\rho_H)\right\},
+ \qquad \rho_H\longrightarrow0.
+\end{equation}
+One may take
+\[
+ \rho_H=
+ \frac{\log M+c-\log(1-2^{-1/2})}{H}.
+\]
+\end{lemma}
+\begin{proof}
+On \(|z|\le R\), the column degree bound gives
+\[
+ |f_{a,P}(z)|
+ \le\exp\left\{H\left(\frac R{w_0}
+                        +\frac{\log(2R)}{w_*}\right)\right\}
+ =:\mathcal B.
+\]
+On \(|t|=1/2\),
+\[
+ |j\lambda_\sigma+\log(1+t)|
+ \le(K-1)\Gamma|x|+\log2<R/2.
+\]
+Expand \(f_{a,P}(z)=\sum_{d\ge0}b_{a,P,d}(z/R)^d\).
+Cauchy's estimate gives \(|b_{a,P,d}|\le\mathcal B\).
+The Taylor test of order \(r\) applied to \((z/R)^d\) has
+absolute value at most \(2^r2^{-d}\).
+
+If two rows use the same pair \((a,d)\), their coefficient vectors
+\((b_{a,P,d})_P\) agree, and that determinant term is zero.
+For a nonzero term the degrees in each \(a\)-group are distinct;
+therefore
+\[
+ \sum_{\text{rows}}d\ge\sum_a\binom{n_a}{2}
+                    =\frac{\sum_a n_a^2-M}{2}.
+\]
+Use half of the factor \(2^{-\sum d}\) for this lower bound and
+sum its remaining half over all nonnegative degrees independently.
+The latter sum is at most \((1-2^{-1/2})^{-M}\).
+The determinant of each coefficient matrix is at most
+\(M!\mathcal B^M\), and the sum of the Taylor-test orders is at most
+\(MH/v_0\). Hence
+\[
+ |\det T|\le
+ M!\mathcal B^M 2^{MH/v_0}
+ \exp\{-c(\sum_a n_a^2-M)\}(1-2^{-1/2})^{-M}.
+\]
+Use \(M!\le M^M\) to obtain the asserted expression.
+The series manipulations are justified by the same convergent
+geometric majorant. Equation~\eqref{eq:row-count} shows
+\(\log M/H\to0\). This proves the stated uniformity as well.
+\end{proof}
+
+The argument is the coefficient-collision mechanism of
+\cite[Lemma 3.3]{OAIpi}. The change to real logarithmic centers
+requires only the new radius bound; it does not remove the repeated
+coefficient rows responsible for the saving.
+
+\subsection{Two alternatives for the full determinant}
+
+Fix \(0<A<1\) and \(0<\eta<1\), and let
+\[
+ D_A(H)=\#\{a\in\N^m:wa\le AH\},\qquad
+ L_H=\frac{\eta^2M}{H D_A(H)}.
+\]
+The simplex counts imply
+\begin{equation}\label{eq:collision-limit}
+ D_A(H)\sim\frac{A^mH^m}{m!\prod_iw_i},\qquad
+ L_H\longrightarrow
+ L=\frac{\eta^2K\theta^m}{(m+1)v_0A^m}.
+\end{equation}
+If at least \(\eta M\) chosen rows have \(wa\le AH\),
+Cauchy--Schwarz gives
+\(\sum_a n_a^2\ge\eta^2M^2/D_A(H)=MH L_H\).
+For a nonzero scalar, \(a\ge\beta\); thus the approximation
+exponent in \eqref{eq:scalar} is nonpositive and may be discarded.
+If fewer than \(\eta M\) rows have \(wa\le AH\), then
+\[
+ \sum_{\rm rows}w(a-\beta)>
+ MH\bigl(A(1-\eta)-\bar b_H\bigr).
+\]
+In this alternative discard the nonpositive collision exponent.
+The determinant expansion has at most \(Q_H^M\) terms.
+Taking logarithms of the triangle inequality yields, at every
+compatible embedding,
+\begin{equation}\label{eq:good-bound}
+ \frac{\log|\sigma(\Delta_H)|}{MH}
+ \le E_{\rm tr}+E_{\rm hol}
+     +\rho_H+\frac{\log Q_H}{H}
+     +\max\{-cL_H,-\nu(A(1-\eta)-\bar b_H)\}.
+\end{equation}
+This upper bound applies to every selected nonzero full-row minor.
+It is uniform in its selected columns; no analytic choice of a special
+minor is made after the arithmetic choice.
+
+\subsection{The other embeddings}
+
+For an arbitrary embedding \(\sigma\), use
+\eqref{eq:binomial-entry} directly. On \(|t|=1/2\),
+\[
+ |j\sigma(\gamma)p_i/q_i|\le KB_0,\qquad |G_i(t)|<1.
+\]
+The binomial coefficient costs at most \(2^{|\alpha|}\);
+\(|\sigma(\xi)^{jh}|\le\Xi^{Kh}\);
+\(|1+t|^h\le(3/2)^h\); and coefficient extraction costs \(2^\ell\).
+It follows that every entry is at most \(\exp(HU)\), where the
+convenient common bound used by the formal proof is
+\begin{equation}\label{eq:direct-error}
+ U=\frac{(\log\Xi+\log(3/2))K}{w_0}
+       +\frac{\log(2(KB_0+2))}{w_*}
+       +\frac{\log2}{v_0}\ge0.
+\end{equation}
+Thus
+\begin{equation}\label{eq:other-bound}
+ \frac{\log|\sigma(\Delta_H)|}{MH}\le U+\frac{\log M}{H}.
+\end{equation}
+We claim no collision saving at incompatible embeddings.
+
+\begin{proposition}[All-embedding upper bound]\label{prop:analytic}
+Let
+\[
+ E_{\rm an}=E_{\rm tr}+E_{\rm hol}+\kappa U.
+\]
+For the same minor used in Proposition~\ref{prop:arithmetic},
+\begin{equation}\label{eq:analytic}
+ \mathcal N_H\le E_{\rm an}+o(1)
+       +\max\{-cL_H,-\nu(A(1-\eta)-\bar b_H)\}.
+\end{equation}
+The remainder tends to zero for the fixed data and is uniform over
+the selected columns.
+\end{proposition}
+\begin{proof}
+Sum \eqref{eq:good-bound} over \(S\), and
+\eqref{eq:other-bound} over its complement, then divide by \(s\).
+Since \(U+\log M/H\ge0\), replacing the complement size by \(d\)
+only enlarges the upper bound.
+One resulting remainder is
+\[
+ \rho_H+\frac{\log Q_H}{H}+\kappa\frac{\log M}{H},
+\]
+which tends to zero by the polynomial growth of \(M\) and \(Q_H\).
+\end{proof}

@@ -1,0 +1,141 @@
+\section{Introduction}
+
+For an irrational real number \(x\), write
+\[
+ \mu(x)=\sup\left\{\nu>0:
+  0<\abs{x-\frac pq}<q^{-\nu}
+  \text{ for infinitely many reduced }p/q,\ q\ge2\right\},
+\]
+allowing the value \(+\infty\). Dirichlet's theorem gives
+\(\mu(x)\ge2\). An upper bound concerns every sufficiently large
+denominator, not merely a chosen sequence of approximants.
+All logarithms of positive real numbers in this paper are natural.
+
+\begin{theorem}[Rational logarithms]\label{thm:rational}
+Let \(r\in\Q\), \(r>0\), \(r\ne1\). For every \(\varepsilon>0\)
+there is an integer \(Q=Q(r,\varepsilon)\ge2\) such that
+\begin{equation}\label{eq:rational-main}
+ \abs{\log r-\frac pq}\ge q^{-(2+\varepsilon)}
+ \qquad(p\in\Z,\ q\in\N,\ q\ge Q).
+\end{equation}
+No coprimality condition is imposed. Consequently \(\log r\) is
+irrational and
+\[
+ \mu(\log r)=2.
+\]
+In particular, \(\mu(\log3)=2\).
+\end{theorem}
+
+The broader statement records exactly how the number field enters.
+Embeddings, including two complex-conjugate embeddings, are counted
+separately.
+
+\begin{theorem}[Compatible embeddings]\label{thm:compatible}
+Let \(F\) be a number field of degree \(d=[F:\Q]\), let
+\(\gamma,\xi\in F\), \(\gamma\ne0\), and let \(x\in\R\setminus\{0\}\).
+Suppose that a nonempty set \(S\) of embeddings \(F\hookrightarrow\C\)
+satisfies
+\begin{equation}\label{eq:compatibility}
+ \exp(\sigma(\gamma)x)=\sigma(\xi)\qquad(\sigma\in S).
+\end{equation}
+Put \(s=|S|\) and \(\kappa=d/s\).
+For every \(\varepsilon>0\) there is an integer \(Q\ge2\) such that
+\begin{equation}\label{eq:compatible-main}
+ \abs{x-\frac pq}\ge q^{-(2\kappa+\varepsilon)}
+ \qquad(p\in\Z,\ q\in\N,\ q\ge Q).
+\end{equation}
+In particular \(x\) is irrational and
+\[
+ 2\le\mu(x)\le\frac{2d}{s}.
+\]
+If all embeddings are compatible, then \(\mu(x)=2\).
+\end{theorem}
+
+Compatibility already implies \(\xi\ne0\). There is no hypothesis that
+\(\xi\) is not a root of unity, that \(x\) is already irrational, or
+that an interpolation matrix has full rank. Those facts or alternatives
+needed in the proof are established below.
+
+\begin{corollary}[Positive algebraic bases]\label{cor:algebraic}
+If \(\alpha>0\) is algebraic over \(\Q\), \(\alpha\ne1\), and
+\(d=\deg_{\Q}(\alpha)\), then \(\log\alpha\) is irrational and
+\[
+ 2\le\mu(\log\alpha)\le2d.
+\]
+For every \(\varepsilon>0\), the associated lower bound with exponent
+\(2d+\varepsilon\) holds for all sufficiently large denominators.
+\end{corollary}
+\begin{proof}
+Take \(F=\Q(\alpha)\subset\R\), \(\gamma=1\),
+\(\xi=\alpha\), \(x=\log\alpha\), and let \(S\) contain its given real
+embedding into \(\C\). Theorem~\ref{thm:rational} is the case
+\(F=\Q\), \(s=d=1\).
+\end{proof}
+
+\subsection{Prior work and the contribution here}
+
+Quantitative approximation to logarithms has a substantial history.
+Zudilin's survey \cite{Zudilin2004} discusses integral and hypergeometric
+methods for \(\log2\), \(\log3\), and \(\pi\).
+For \(\log3\), Wu and Wang \cite[Corollary~1]{WuWang2014} obtained
+\(\mu(\log3)\le5.1163051\), subsequently improved by Bondareva,
+Luchin, and Salikhov \cite[Corollary~1]{BLS2018} to
+\(\mu(\log3)\le5.116201\). These are finite upper bounds,
+not the exact value two asserted in Theorem~\ref{thm:rational}.
+Marcovecchio and Viola \cite{MV2012} study approximation to logarithms
+by elements of number fields, as well as nonquadraticity measures,
+using double integrals and the saddle-point method.
+Their number-field approximation problem, normalized by Weil height,
+must be distinguished from the rational-approximation exponent used here.
+Marcovecchio's multiple-Legendre construction \cite{Marcovecchio2014}
+also treats approximation by algebraic numbers of bounded degree.
+Bouchelaghem, He, Li, and Wu \cite{BHLW2024} study linear-independence
+measures involving two rational logarithms, another quantitative problem
+distinct from the individual exponents considered here.
+We do not claim that finite irrationality bounds for logarithms were
+previously unknown, nor that our degree bound is best in every special
+case.
+The immediate input is OpenAI's preprint \cite{OAIpi} and its pinned
+formal development. Its proof of
+\(\mu(\pi)=2\) combines separated approximation denominators, weighted
+interpolation, arithmetic clearing of a nonzero determinant, and an
+analytic saving caused by repeated Taylor coefficient rows.
+This paper reuses that architecture and its proved general ingredients.
+It is not a deduction from the numerical statement \(\mu(\pi)=2\).
+
+The new geometric input allows the multiplicative coordinates of the
+interpolation points to be distinct nonzero numbers. For \(\log3\)
+they are \(3^j\); for \(\log r\), they are \(r^j\).
+The local coordinate \(t=Y/y_j-1\) preserves the logarithmic frame.
+Once the rigidity argument forces \(Y\) to be constant, such a curve
+can meet at most one center. The formal development also supplies the
+common-fiber alternative needed when a root of unity is reduced to \(1\).
+Both alternatives lead to the actual, explicitly defined interpolation
+matrix, not to a matrix of assumed rank.
+
+The arithmetic extension clears denominators of both the algebraic base
+\(\xi\) and the slope \(\gamma\). A single selected determinant over
+\(F\) is then mapped through every embedding. Compatible embeddings
+give analytic decay; the others incur a controlled growth cost.
+Taking its norm and dividing by the number of compatible embeddings
+produces \(\kappa=d/s\). Omitting the other embeddings would erase this
+essential factor and would not prove the stated theorem.
+
+\subsection{Organization and scope}
+
+Section~\ref{sec:preliminaries} fixes the approximation conventions.
+Section~\ref{sec:interpolation} proves the required interpolation
+statement, making the inherited multiplicity input explicit.
+Sections~\ref{sec:arithmetic} and \ref{sec:analysis} establish the
+arithmetic and analytic inequalities for the same determinant.
+Section~\ref{sec:parameters} chooses all parameters in their required
+order and closes the contradiction.
+Section~\ref{sec:consequences} gives the specializations, a comparison
+with the \(\pi\) proof, and counterexamples to unrestricted real-input
+claims. Section~\ref{sec:verification} records formal statements,
+source provenance, and reproducible checks.
+
+The results do not assert exponent two for every positive algebraic
+base or a uniform finite bound for arbitrary positive real bases.
+The eventual thresholds are existential; this paper does not compute
+their numerical values.

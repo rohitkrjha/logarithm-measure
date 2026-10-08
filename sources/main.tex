@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem,fancyvrb}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\setcounter{tocdepth}{1}
+\setlist[enumerate]{itemsep=3pt,topsep=5pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\PW}{\mathcal P_W}
+\newcommand{\JV}{\mathcal J_V}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\ELB}{\operatorname{ELB}}
+\newcommand{\leanfile}[1]{\mbox{\texttt{#1}}}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\input{author}
+\title{Optimal irrationality measures for logarithms of rational numbers\\
+and a compatible-embedding extension}
+\author{\PaperAuthor}
+\date{October 8, 2026}
+\hypersetup{
+ pdftitle={Optimal irrationality measures for logarithms of rational numbers and a compatible-embedding extension},
+ pdfauthor={\PaperAuthor},
+ pdfsubject={Diophantine approximation and formal verification},
+ pdfkeywords={logarithms, irrationality exponent, number fields, interpolation determinants, Lean}
+}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that the irrationality exponent of \(\log r\) is \(2\) for every
+positive rational number \(r\ne1\), in particular for \(r=3\).
+The proof extends the separated-weight interpolation and determinant
+method of OpenAI's proof that the irrationality exponent of \(\pi\) is two.
+The geometric extension permits distinct nonzero multiplicative centers,
+and the arithmetic extension accounts for denominators of rational and
+algebraic bases. More generally, let \(F\) be a number field of degree
+\(d\), let \(\gamma,\xi\in F\) with \(\gamma\ne0\), and let
+\(x\in\R\setminus\{0\}\). If
+\(\exp(\sigma(\gamma)x)=\sigma(\xi)\) for \(s\ge1\) embeddings
+\(\sigma:F\hookrightarrow\C\), then \(x\) is irrational and
+\(2\le\mu(x)\le2d/s\).
+The same algebraic determinant is estimated at every embedding; the field
+norm supplies the factor \(d/s\). The root-of-unity case is included.
+Consequences include a bound \(2\deg_{\Q}(\alpha)\) for
+\(\mu(\log\alpha)\) when \(\alpha>0\) is algebraic and not \(1\),
+and exponent two for rational-power logarithms, nonzero rational
+arctangents, and certain quadratic-normalized logarithms.
+The endpoint statements and their full dependency closure have been
+checked in Lean, including replay in an initially empty kernel
+environment. The proof does not compute numerical denominator thresholds.
+\end{abstract}
+\noindent\textit{Keywords:} irrationality exponent; logarithms; weighted
+interpolation; algebraic number fields; formal verification.
+
+\tableofcontents
+\input{sections/introduction}
+\input{sections/preliminaries}
+\input{sections/interpolation}
+\input{sections/arithmetic}
+\input{sections/analysis}
+\input{sections/parameters}
+\input{sections/consequences}
+\input{sections/verification}
+\bibliographystyle{plain}
+{\raggedright
+\bibliography{references}
+}
+\end{document}
